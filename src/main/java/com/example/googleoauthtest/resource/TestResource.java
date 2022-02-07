@@ -11,12 +11,22 @@ import static org.springframework.http.HttpStatus.OK;
 
 
 @RestController
-@RequestMapping("/api/v1/hello")
+@RequestMapping("/api/v1")
 public class TestResource {
 
-    @GetMapping(produces = MediaType.TEXT_PLAIN_VALUE)
+    @GetMapping("/hello")
     @ResponseStatus(OK)
     public ResponseEntity<String> sayHello() {
         return ResponseEntity.ok("Hello World");
+    }
+    @GetMapping("/helloUser")
+    @ResponseStatus(OK)
+    public ResponseEntity<String> sayHelloToUser() {
+        return ResponseEntity.ok("Hello World by user");
+    }
+    @GetMapping("/helloAdmin")
+    @ResponseStatus(OK)
+    public ResponseEntity<String> sayHelloTOAdmin() {
+        return ResponseEntity.ok("Hello World by admin");
     }
 }
