@@ -1,16 +1,40 @@
 server:
   port: 8080
 
-#spring:
-#  security:
-#    oauth2:
-#      client:
-#        registration:
-#          google:
-#            client-id: 765803471088-mir5i8v8g1lbfmu5murat0nqeopps338.apps.googleusercontent.com
+
+security:
+  oauth2:
+    client:
+      client-id: client-id
+      client-secret: client-secret
+      access-token-uri: https://www.googleapis.com/oauth2/v3/token
+      user-authorization-uri: https://accounts.google.com/o/oauth2/auth
+      token-name: oauth_token
+      authentication-scheme: query
+      client-authentication-scheme: form
+      scope:
+        - profile email
+    resource:
+      user-info-uri: https://www.googleapis.com/userinfo/v2/me
+      prefer-token-info: false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#  client-id: 765803471088-mir5i8v8g1lbfmu5murat0nqeopps338.apps.googleusercontent.com
 #            client-secret: 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
-#            scope: openid,profile,email
-#      resourceserver:
-#        jwt:
-#          issuer-uri: https://accounts.google.com
-#          jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs/
+#            accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+#            userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+#            clientAuthenticationScheme: form
